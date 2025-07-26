@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More Effect</title>
+    <style>
+        .content {
+            height: 100px; /* Limit height initially */
+            overflow: hidden;
+            transition: height 0.3s ease-in-out;
+        }
+
+        .read-more-btn {
+            display: block;
+            cursor: pointer;
+            color: blue;
+            font-weight: bold;
+            margin-top: 10px;
+            border: none;
+            background: none;
+        }
+		
+		
+    </style>
+</head>
+<body>
+
+    <div class="content" id="textContent">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl eget facilisis ultricies, 
+            nibh lorem aliquet nisl, eu sodales elit diam vel dolor. Curabitur non libero ut ipsum sagittis tincidunt.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+            Integer euismod elit in tellus suscipit, ac facilisis orci consectetur.
+            <span id="extraContent" style="display: none;height:200px;">
+                <br><br>
+                More hidden text here! This part was hidden but now it's visible.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
+                Donec vitae neque nec nunc ullamcorper tincidunt. 
+                Proin elementum, turpis sed efficitur luctus, erat justo pulvinar sapien, sit amet dapibus odio metus ut libero.
+            </span>
+        </p>
+    </div>
+    <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+
+    <script>
+        function toggleReadMore() {
+            var extraContent = document.getElementById("extraContent");
+            var button = document.querySelector(".read-more-btn");
+
+            if (extraContent.style.display === "none") {
+                extraContent.style.display = "inline"; // Show hidden text
+                button.textContent = "Read Less"; 
+            } else {
+                extraContent.style.display = "none"; // Hide text again
+                button.textContent = "Read More"; 
+            }
+        }
+    </script>
+
+</body>
+</html>
